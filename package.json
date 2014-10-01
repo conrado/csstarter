@@ -1,0 +1,36 @@
+{
+  "name": "csstarter",
+  "version": "0.0.1",
+  "description": "coffee-script npm module starter",
+  "bin": {
+    "csstarter": "lib/index.js"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "pretest": "cake build",
+    "prepublish": "cake build",
+    "test": "cake test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conrado/csstarter.git"
+  },
+  "keywords": [
+    "coffeescript",
+    "npm",
+    "template",
+    "skeleton"
+  ],
+  "author": "Conrado Buhrer",
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/conrado/csstarter/issues"
+  },
+  "homepage": "https://github.com/conrado/csstarter",
+  "devDependencies": {
+    "assert": "^1.1.2",
+    "docco": "^0.6.3",
+    "mocha": "^1.21.4"
+  }
+}
