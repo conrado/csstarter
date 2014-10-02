@@ -1,12 +1,12 @@
-# ** md3html Cakefile **
+# ** csstarter Cakefile **
 #
 # It comes baked in with 5 tasks:
 #
 # * build - compiles your src directory to your lib directory
 # * watch - watches any changes in your src directory and automatically compiles
-#           to the lib directory
+# to the lib directory
 # * test  - runs mocha test framework, you can edit this task to use your
-#           favorite test framework
+# favorite test framework
 # * docs  - generates annotated documentation using docco
 # * clean - clean generated .js files
 files = [
@@ -100,8 +100,8 @@ task 'clean', 'clean generated files', -> clean -> log ";)", green
 # ## *walk*
 #
 # **given** string as dir which represents a directory in relation to local
-#           directory
-# **and** callback as done in the form of (err, results)
+# directory  
+# **and** callback as done in the form of (err, results)  
 # **then** recurse through directory returning an array of files
 #
 # Examples
@@ -131,20 +131,20 @@ walk = (dir, done) ->
 
 # ## *log*
 #
-# **given** string as a message
-# **and** string as a color
-# **and** optional string as an explanation
+# **given** string as a message  
+# **and** string as a color  
+# **and** optional string as an explanation  
 # **then** builds a statement and logs to console.
 #
 log = (message, color, explanation) -> console.log color + message + reset + ' ' + (explanation or '')
 
 # ## *launch*
 #
-# **given** string as a cmd
-# **and** optional array and option flags
-# **and** optional callback
-# **then** spawn cmd with options
-# **and** pipe to process stdout and stderr respectively
+# **given** string as a cmd  
+# **and** optional array and option flags  
+# **and** optional callback  
+# **then** spawn cmd with options  
+# **and** pipe to process stdout and stderr respectively  
 # **and** on child process exit emit callback if set and status is 0
 launch = (cmd, options=[], callback) ->
   cmd = which(cmd) if which
@@ -159,9 +159,9 @@ launch = (cmd, options=[], callback) ->
 
 # ## *build*
 #
-# **given** optional boolean as watch
-# **and** optional function as callback
-# **then** invoke launch passing coffee command
+# **given** optional boolean as watch  
+# **and** optional function as callback  
+# **then** invoke launch passing coffee command  
 # **and** defaulted options to compile src to lib
 build = (watch, callback, {useMapping} = {}) ->
   useMapping ?= false
@@ -179,9 +179,9 @@ build = (watch, callback, {useMapping} = {}) ->
 
 # ## *unlinkIfCoffeeFile*
 #
-# **given** string as file
-# **and** file ends in '.coffee'
-# **then** convert '.coffee' to '.js'
+# **given** string as file  
+# **and** file ends in '.coffee'  
+# **then** convert '.coffee' to '.js'  
 # **and** remove the result
 unlinkIfCoffeeFile = (file) ->
   if file.match /\.coffee$/
@@ -192,8 +192,8 @@ unlinkIfCoffeeFile = (file) ->
 
 # ## *clean*
 #
-# **given** optional function as callback
-# **then** loop through files variable
+# **given** optional function as callback  
+# **then** loop through files variable  
 # **and** call unlinkIfCoffeeFile on each
 clean = (callback) ->
   try
@@ -208,10 +208,10 @@ clean = (callback) ->
 
 # ## *moduleExists*
 #
-# **given** name for module
-# **when** trying to require module
-# **and** not found
-# **then* print not found message with install helper in red
+# **given** name for module  
+# **when** trying to require module  
+# **and** not found  
+# **then* print not found message with install helper in red  
 # **and* return false if not found
 moduleExists = (name) ->
   try
@@ -223,8 +223,8 @@ moduleExists = (name) ->
 
 # ## *mocha*
 #
-# **given** optional array of option flags
-# **and** optional function as callback
+# **given** optional array of option flags  
+# **and** optional function as callback  
 # **then** invoke launch passing mocha command
 mocha = (options, callback) ->
   #if moduleExists('mocha')
@@ -241,9 +241,11 @@ mocha = (options, callback) ->
 
 # ## *docco*
 #
-# **given** optional function as callback
+# **given** optional function as callback  
 # **then** invoke launch passing docco command
 docco = (callback) ->
-  #if moduleExists('docco')
-  walk 'src', (err, files) -> launch './node_modules/docco/bin/docco', files, callback
+  if moduleExists('docco')
+    walk 'src', (err, files) ->
+      files.push 'Cakefile'
+      launch './node_modules/docco/bin/docco', files, callback
 

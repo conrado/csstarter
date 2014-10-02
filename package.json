@@ -1,7 +1,7 @@
 {
   "name": "csstarter",
-  "version": "0.0.1",
-  "description": "coffee-script npm module starter",
+  "version": "0.0.3",
+  "description": "coffee-script module skeleton",
   "bin": {
     "csstarter": "lib/index.js"
   },
@@ -17,7 +17,6 @@
   },
   "keywords": [
     "coffeescript",
-    "npm",
     "template",
     "skeleton"
   ],
