@@ -1,35 +1,40 @@
 {
-  "name": "csstarter",
-  "version": "0.0.3",
-  "description": "coffee-script module skeleton",
-  "bin": {
-    "csstarter": "lib/index.js"
+  "devDependencies": {
+    "mocha": "^1.21.4"
   },
-  "main": "lib/index.js",
-  "scripts": {
-    "pretest": "cake build",
-    "prepublish": "cake build",
-    "test": "cake test"
+  "dependencies": {
+    "coffee-script": "^1.9.3",
+    "github": "^0.2.4",
+    "html-wiring": "^1.1.0",
+    "underscore.string": "^3.1.1",
+    "yeoman-generator": "^0.17.7"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/conrado/csstarter.git"
+  "homepage": "https://github.com/conrado/generator-csstarter",
+  "bugs": {
+    "url": "https://github.com/conrado/generator-csstarter/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "Apache",
+  "author": {
+    "name": "Conrado Buhrer",
+    "email": "conrado@buhrer.net",
+    "url": "http://conrado.buhrer.net"
   },
   "keywords": [
     "coffeescript",
-    "template",
-    "skeleton"
+    "module",
+    "generator",
+    "yeoman-generator"
   ],
-  "author": "Conrado Buhrer",
-  "license": "ISC",
-  "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/conrado/csstarter/issues"
+  "name": "generator-csstarter",
+  "version": "0.0.1",
+  "description": "coffee-script module yeoman generator",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "mocha test/*.spec.coffee"
   },
-  "homepage": "https://github.com/conrado/csstarter",
-  "devDependencies": {
-    "assert": "^1.1.2",
-    "docco": "^0.6.3",
-    "mocha": "^1.21.4"
+  "repository": {
+    "url": "https://github.com/conrado/generator-csstarter.git",
+    "type": "git"
   }
 }

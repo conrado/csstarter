@@ -1,0 +1,43 @@
+{
+  "name": "<%= slug %>",
+  "version": "0.0.1",
+  "description": "My new awesome coffee-script module",
+  "bin": {
+    "csstarter": "lib/index.js"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<%= githubUrl %>/<%= slug %>.git"
+  },
+  "keywords": [
+    "coffeescript"
+  ],
+  "author": {
+    "name": "<%= realname %>",
+    "email": "<%= email %>",
+    "url": "<%= githubUrl %>"
+  },
+  "license": "Apache",
+  "readmeFilename": "README.md",
+  "bugs": "<%= githubUrl %>/<%= slug %>/issues",
+  "homepage": "<%= githubUrl %>/<%= slug %>",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "assert": "^1.1.2",
+    "coffee-script": "^1.9.3",
+    "docco": "^0.6.3",
+    "gulp": "^3.9.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-docco": "0.0.4",
+    "gulp-istanbul": "^0.10.0",
+    "gulp-mocha": "^2.1.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-util": "^3.0.5",
+    "mocha": "^2.2.5"
+  }
+}

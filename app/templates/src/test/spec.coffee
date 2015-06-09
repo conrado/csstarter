@@ -1,12 +1,13 @@
 assert = require 'assert'
-starter = require '..'
 
-describe 'starter', ->
+<%= classname %> = require '..'
+
+describe '<%= appname %>', ->
   describe '#extend()', ->
     it 'should add all properties to destination object', ->
       # we are optimistic, non-empty `b` here should fail
       a =
         lala: 'lala'
       b =
-      starter.extend a, b
+      <%= classname %>.extend a, b
       assert.deepEqual a, b
