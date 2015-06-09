@@ -1,4 +1,6 @@
+/node_modules/
+/coverage/
 /src/
 .git
-Cakefile
+gulpfile.coffee
 npm-debug.log

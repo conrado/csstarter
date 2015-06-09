@@ -1,34 +1,34 @@
-csstart
+<%= slug %>
 =======
 
-A skeleton for creating coffeescript modules.
+Hello and welcome to your coffeescript application <%= classname %> This is
+still just a simple yeoman generated skeleton for a coffeescript module.
+
+Be sure to follow the *Usage* guidelines to start developing your project.
 
 Usage
 -----
 
-- Clone the repository,
-- rename all `csstart` references to your own project
-- delete the `.git` and re-init version control
+Perform the following:
 
-To see available commands run:
+- Use `git init` to start version control
+- Start `gulp watch` to continuously build your code
 
-    cake
+Available gulp commands are:
 
-Features
---------
+- `gulp lint` to lint all your coffeescript.
+- `gulp coffee` to build coffeescript into javascript.
+- `gulp watch` will persistently perform a *lint* and *coffee* build on every
+  file save.
+- `gulp test` will test your compiled javascript code and cover it with
+  istanbul.
+- `gulp docs` will compile all your coffee files into `docs/`
 
-- **Cakefile** with 5 built-in commands
-- **Docco** displaying 2 ways of documenting code
-- **Mocha** with 1 simple test
-- **.npmignore** to prevent publishing coffeescript
-- **package.json** with pre-publish script
+Be sure to understand the following
+-----------------------------------
 
-Wishlist
---------
-
-- Turn this into a generator to skip manual renaming.
-
-Credits
--------
-
-Cakefile stolen from [twilson63](https://github.com/twilson63/cakefile-template)
+- **gulpfile.coffee**
+- **Docco**
+- **Mocha**
+- **.npmignore**
+- **package.json**

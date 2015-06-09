@@ -8,8 +8,9 @@
 # extends an object with the properties of others
 #
 # **given** arguments with objects  
-#**then** add all properties from second through to last objects to first object  
-# **and** return first object
+# **then**  add all properties from second through to last objects to first
+#           object  
+# **and**   return first object
 
 @extend = ->
   for i in [1..arguments.length]
